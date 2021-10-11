@@ -22,6 +22,8 @@ public class Main
             if(string1.charAt(0) == string2.charAt(i))
             {
                 string2Index = i+1;
+                if(string2Index >= string2.length())
+                    string2Index = 0;
                 break;
             }
         }

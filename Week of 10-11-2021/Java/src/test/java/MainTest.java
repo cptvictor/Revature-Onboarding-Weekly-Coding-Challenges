@@ -15,8 +15,20 @@ class MainTest {
     }
 
     @Test
+    void java2SuccessMatchingLetterAtEnd()
+    {
+        assertEquals(true, Main.java2("abcd", "bcda"));
+    }
+
+    @Test
     void java2Failure()
     {
         assertEquals(false, Main.java2("abcd", "dbac"));
+    }
+
+    @Test
+    void java2FailureNoMatchingLetter()
+    {
+        assertEquals(false, Main.java2("abcd", "hhhh"));
     }
 }
