@@ -9,8 +9,14 @@ class MainTest {
     }
 
     @Test
-    void java2()
+    void java2Success()
     {
         assertEquals(true, Main.java2("abcd", "dabc"));
+    }
+
+    @Test
+    void java2Failure()
+    {
+        assertEquals(false, Main.java2("abcd", "dbac"));
     }
 }
