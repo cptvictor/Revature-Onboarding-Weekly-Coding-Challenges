@@ -1,4 +1,4 @@
-function IngWords(wordList: string[])
+function JavaScript1(wordList: string[])
 {
     let ingWords: string[] = [];
     for (const word of wordList) 
@@ -20,4 +20,4 @@ function IngWords(wordList: string[])
     return ingWords;
 }
 
-console.log(IngWords(["bring", "carrying", "bed", "Ace", "mooring", "apple"]));
+console.log(JavaScript1(["bring", "carrying", "bed", "Ace", "mooring", "apple"]));
