@@ -1,17 +1,44 @@
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
 
 public class Main
 {
     public static void main(String[] args)
     {
+        HashMap<Integer, Character> hashMap = new HashMap<>();
+        for(int i = 0; i < 10; i++)
+        {
+            hashMap.put(i, (char) (i+33));
+        }
+        System.out.println("Java Challenge 1\n");
+        java1(hashMap);
+        System.out.println();
 
+        String string1 = "abcd";
+        String string2 = "dabc";
+        System.out.println("Java Challenge 2\n");
+        System.out.println(string1 + " " + string2);
+        System.out.println(java2(string1, string2));
     }
 
-    public static void java1()
+    public static <T, K> void java1(HashMap<T,K> hashMap)
     {
-        HashMap<Integer, String> hashMap = new HashMap<>();
+        Set<T> keys = hashMap.keySet();
 
+        System.out.println("Advanced For Loop");
+        for (T key: keys)
+        {
+            System.out.println(key + ": " + hashMap.get(key));
+        }
 
+        System.out.println("While Loop");
+        Iterator<T> iterator = keys.iterator();
+        while (iterator.hasNext())
+        {
+            T key = iterator.next();
+            System.out.println(key + ": " + hashMap.get(key));
+        }
     }
 
     public static boolean java2(String string1, String string2)
