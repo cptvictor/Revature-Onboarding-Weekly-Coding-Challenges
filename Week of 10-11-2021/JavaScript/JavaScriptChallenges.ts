@@ -24,9 +24,15 @@ class Product
 {
     name: string;
     cost: number;
+
+    constructor()
+    {
+        this.name = "";
+        this.cost = 0;
+    }
 }
 
-function vendingMachine(products: Product[], cents: number, productNumber: number)
+function javaScript2(products: Product[], cents: number, productNumber: number)
 {
     if(productNumber < 1 || productNumber > products.length)
         return "Enter a valid product number";
@@ -69,12 +75,25 @@ function vendingMachine(products: Product[], cents: number, productNumber: numbe
                 changeInCoins.push(10);
                 totalChange -= 10;
             }
+            if(totalChange > 0)
+                changeInCoins.push(totalChange);
             return {
                 product: product.name,
                 change: changeInCoins
-            }
+            };
         }
     }
 }
 
 console.log(javaScript1(["bring", "carrying", "bed", "Ace", "mooring", "apple"]));
+
+const testProducts: Product[] = [{name: "Crackers", cost: 200},
+                                {name: "Oreos", cost: 450},
+                                {name: "Gummi Bears", cost: 100},
+                                {name: "Cheese Stick", cost: 120},
+                                {name: "Chex Mix", cost: 580},
+                                {name: "Soda", cost: 390},
+                                {name: "Cheez-it", cost: 760}];
+console.log(javaScript2(testProducts, 500, 0));
+console.log(javaScript2(testProducts, 10, 1));
+console.log(javaScript2(testProducts, 1000, 3));
